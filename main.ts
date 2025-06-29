@@ -1,10 +1,7 @@
-provider "github" {
-    owner = "joao.felipe"
-  }
-  
-  resource "github_repository" "demo_repo" {
-    name        = "my-terraform-created-repo-demo"
-    description = "This repository was created using Terraform!"
-    visibility  = "public"    # or "private"
-    auto_init   = true        # creates an initial commit with README
-  }
+provider "aws" {
+  region = "eu-west-2"
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = "joao-felipe-bn-terraform-demo-bucket"
+}
